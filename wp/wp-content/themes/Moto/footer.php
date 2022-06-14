@@ -11,7 +11,21 @@
               'items_wrap' => '%3$s',
               ] );
             ?>
-            <span class="accent-color">&copy; </span> MOTO, 2022
+              <?php
+                $settings = get_posts( [
+                'numberposts' =>1,
+                'category_name' => 'settings',
+                'post_type' => 'post',
+                 ]);
+                foreach ($settings as $post) {
+              ?>
+
+              <span class="accent-color">&copy; </span> <?= CFS()->get('footer_text'); ?>, 2015-<?= date('Y'); ?>
+
+              <?php
+                }
+                wp_reset_postdata();
+              ?>
           </div>
         </div>
       </div>

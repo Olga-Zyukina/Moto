@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       <?php
-        if (is_404()) {
+        if(is_404()) {
           echo 'Error 404';
-        } else {
+        } elseif(is_category('motorcycles')) {
+          echo single_cat_title();
+        }
+        else {
           the_title();
         }
       ?>
@@ -35,8 +38,22 @@
             ] );
           ?>
           <div class="phone">
-            <a href="tel:+79999999999">&#9742; +7 (999) 999-99-99</a>
-          </div>
+            <?php
+              $settings = get_posts( [
+              'numberposts' =>1,
+              'category_name' => 'settings',
+              'post_type' => 'post',
+               ]);
+              foreach ($settings as $post) {
+            ?>
+
+            <a href="tel:<?= CFS()->get('header_phone_link'); ?>">&#9742; <?= CFS()->get('header_phone'); ?></a>
+
+            <?php
+              }
+              wp_reset_postdata();
+            ?>
+           </div>
         </div>
       </div>
     </div>

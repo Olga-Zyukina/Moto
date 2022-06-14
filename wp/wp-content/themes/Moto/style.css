@@ -613,7 +613,7 @@ textarea {
   list-style: none;
   padding-left: 0;
 }
-.list li {
+.city {
   border-bottom: 2px solid var(--text-accent);
   line-height: 26px;
 }

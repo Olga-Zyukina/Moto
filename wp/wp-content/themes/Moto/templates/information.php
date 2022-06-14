@@ -12,82 +12,146 @@ get_header();
         <!-- Диски -->
         <div class="row information_title">
           <div class="col-12">
-            <h2>Диски</h2>
+            <h2><?= get_category ( 9, ARRAY_A )['name']; ?></h2>
           </div>
         </div>
         <div class="row information_grid">
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/1/1.jpg" />
-            <h3>Диск-1</h3>
-          </div>
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/1/2.jpg" />
-            <h3>Диск-2</h3>
-          </div>
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/1/3.jpg" />
-            <h3>Диск-3</h3>
-          </div>
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/1/4.jpg" />
-            <h3>Диск-4</h3>
-          </div>
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/1/5.jpg" />
-            <h3>Диск-5</h3>
-          </div>
+          <?php
+              $posts = get_posts([
+                'numberposts' => -1,
+                'category' => 9,
+                'orderby' => 'title',
+                // 'order' => 'ASC',
+                'post_type' => 'post'
+                // 'suppress_filters' => 'true'
+              ]);
+              foreach($posts as $post) {
+                setup_postdata($post)
+          ?>            
+                <div class="col-3 col-lg-6 col-sm-12">
+                  <?php the_post_thumbnail(''); ?>
+                  <h3><?php the_title(); ?></h3>
+                </div>
+            <?php           
+               }
+               wp_reset_postdata();
+            ?>  
         </div>
 
         <!-- Рамы -->
         <div class="row information_title">
           <div class="col-12">
-            <h2>Рамы</h2>
+            <h2><?= get_category ( 10, ARRAY_A )['name']; ?></h2>
           </div>
         </div>
         <div class="row information_grid">
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/2/1.jpg" />
-            <h3>Рама-1</h3>
-          </div>
+        <?php
+              $posts = get_posts([
+                'numberposts' => -1,
+                'category' => 10,
+                'orderby' => 'title',
+                // 'order' => 'ASC',
+                'post_type' => 'post'
+                // 'suppress_filters' => 'true'
+              ]);
+              foreach($posts as $post) {
+                setup_postdata($post)
+          ?>            
+                <div class="col-3 col-lg-6 col-sm-12">
+                  <?php the_post_thumbnail(''); ?>
+                  <h3><?php the_title(); ?></h3>
+                </div>
+            <?php           
+               }
+               wp_reset_postdata();
+            ?>  
         </div>
 
         <!-- Маятники -->
         <div class="row information_title">
           <div class="col-12">
-            <h2>Маятники</h2>
+            <h2><?= get_category ( 11, ARRAY_A )['name']; ?></h2>
           </div>
         </div>
         <div class="row information_grid">
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/3/1.jpg" />
-            <h3>Маятник-1</h3>
-          </div>
+        <?php
+              $posts = get_posts([
+                'numberposts' => -1,
+                'category' => 11,
+                'orderby' => 'title',
+                // 'order' => 'ASC',
+                'post_type' => 'post'
+                // 'suppress_filters' => 'true'
+              ]);
+              foreach($posts as $post) {
+                setup_postdata($post)
+          ?>            
+                <div class="col-3 col-lg-6 col-sm-12">
+                  <?php the_post_thumbnail(''); ?>
+                  <h3><?php the_title(); ?></h3>
+                </div>
+            <?php           
+               }
+               wp_reset_postdata();
+            ?>  
         </div>
 
         <!-- Цвет -->
         <div class="row information_title">
           <div class="col-12">
-            <h2>Цвет</h2>
+            <h2><?= get_category ( 12, ARRAY_A )['name']; ?></h2>
           </div>
         </div>
         <div class="row information_grid">
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/4/1.jpg" />
-            <h3>Цветовая палитра на ваш выбор</h3>
-          </div>
+        <?php
+              $posts = get_posts([
+                'numberposts' => -1,
+                'category' => 12,
+                'orderby' => 'title',
+                // 'order' => 'ASC',
+                'post_type' => 'post'
+                // 'suppress_filters' => 'true'
+              ]);
+              foreach($posts as $post) {
+                setup_postdata($post)
+          ?>            
+                <div class="col-3 col-lg-6 col-sm-12">
+                  <?php the_post_thumbnail(''); ?>
+                  <h3><?php the_title(); ?></h3>
+                </div>
+            <?php           
+               }
+               wp_reset_postdata();
+            ?>  
         </div>
 
         <!-- Аэрография -->
         <div class="row information_title">
           <div class="col-12">
-            <h2>Рисунки на ваш выбор</h2>
+            <h2><?= get_category ( 13, ARRAY_A )['name']; ?></h2>
           </div>
         </div>
         <div class="row information_grid">
-          <div class="col-3 col-lg-6 col-sm-12">
-            <img src="img/component/5/1.jpg" />
-            <h3>Аэрография-1</h3>
-          </div>
+        <?php
+              $posts = get_posts([
+                'numberposts' => -1,
+                'category' => 13,
+                'orderby' => 'title',
+                // 'order' => 'ASC',
+                'post_type' => 'post'
+                // 'suppress_filters' => 'true'
+              ]);
+              foreach($posts as $post) {
+                setup_postdata($post)
+          ?>            
+                <div class="col-3 col-lg-6 col-sm-12">
+                  <?php the_post_thumbnail(''); ?>
+                  <h3><?php the_title(); ?></h3>
+                </div>
+            <?php           
+               }
+               wp_reset_postdata();
+            ?>  
         </div>
 		
       </div>

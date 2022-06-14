@@ -11,91 +11,40 @@ get_header();
       <div class="container">
         <div class="row">
           <div class="col-12">
+
+          <?php
+            $posts = get_posts([
+              'numberposts' => -1,
+              'category_name' => 'order',
+              'orderby' => 'title',
+              // 'order' => 'ASC',
+              'post_type' => 'post'
+              // 'suppress_filters' => 'true'
+             ]);
+             foreach($posts as $post) {
+               setup_postdata($post)
+           ?>
+              
             <div class="to-order-card">
-              <h2>Классические мотоциклы</h2>
+              <h2><?php the_title(); ?></h2>
               <div class="to-order-card-inner">
-                <img src="img/order/1.png" alt="Классические" />
+                <?php the_post_thumbnail(''); ?>
                 <div class="to-order-text">
-                  <p>Срок изготовления: 90 суток с момента заказа</p>
+                  <p><?= CFS()->get('order_add'); ?></p>
                 </div>
               </div>
             </div>
-            <div class="to-order-card">
-              <h2>Спортивные мотоциклы</h2>
-              <div class="to-order-card-inner">
-                <img src="img/order/2.png" alt="Спортивные" />
-                <div class="to-order-text">
-                  <p>Срок изготовления: 180 суток с момента заказа</p>
-                </div>
-              </div>
-            </div>
-            <div class="to-order-card">
-              <h2>Чопперы</h2>
-              <div class="to-order-card-inner">
-                <img src="img/order/3.png" alt="Чопперы" />
-                <div class="to-order-text">
-                  <p>Срок изготовления: 90 суток с момента заказа</p>
-                </div>
-              </div>
-            </div>
-            <div class="to-order-card">
-              <h2>Диски</h2>
-              <div class="to-order-card-inner">
-                <img src="img/order/4.png" alt="Диски" />
-                <div class="to-order-text">
-                  <p>
-                    Контакты для переговоров со специалистом: тел. +7 (999)
-                    999-99-99
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="to-order-card">
-              <h2>Рамы</h2>
-              <div class="to-order-card-inner">
-                <img src="img/order/5.png" alt="Рамы" />
-                <div class="to-order-text">
-                  <p>
-                    Контакты для переговоров со специалистом: тел. +7 (999)
-                    999-99-99
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="to-order-card">
-              <h2>Покраска</h2>
-              <div class="to-order-card-inner">
-                <img src="img/order/6.png" alt="Покраска" />
-                <div class="to-order-text">
-                  <p>
-                    Контакты для переговоров со специалистом: тел. +7 (999)
-                    999-99-99
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="to-order-card">
-              <h2>Аэрография</h2>
-              <div class="to-order-card-inner">
-                <img src="img/order/7.jpg" alt="Аэрография" />
-                <div class="to-order-text">
-                  <p>
-                    Контакты для переговоров со специалистом: тел. +7 (999)
-                    999-99-99
-                  </p>
-                </div>
-              </div>
-            </div>
+
+            <?php           
+              }
+              wp_reset_postdata();
+            ?> 
 
             <!-- CALL-BACK-FORM -->
 
             <div class="to-order-form">
-              <h3>ЗАКАЖИТЕ БЕСПЛАТНЫЙ ОБРАТНЫЙ ЗВОНОК</h3>
-              <form action="">
-                <input type="text" placeholder="Ф.И.О" />
-                <input type="text" placeholder="Номер телефона" />
-                <button class="btn">Отправить</button>
-              </form>
+              <h3><?= CFS()->get('order_form_title'); ?></h3>
+              <?= do_shortcode(CFS()->get('order_form_shortcode')); ?>
             </div>
           </div>
         </div>
