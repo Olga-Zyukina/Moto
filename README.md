@@ -15,7 +15,7 @@ A multi-page website. Directory wp - WordPress layout.
 
 Check out the live demo: [MOTO](https://olga-zyukina.github.io/Moto/)
 
-
+## Project Structure
 
 ```
 ├── css/         # Cascading Style Sheet files
